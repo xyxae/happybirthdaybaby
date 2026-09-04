@@ -57,52 +57,103 @@ h1,h2,h3, .display{
 }
 .music-player{
   position:fixed;
-  right:10px;
-  bottom:10px;
+  right:clamp(8px,2vw,16px);
+  bottom:clamp(8px,2vw,16px);
   z-index:1000;
+
   display:flex;
   align-items:center;
-  gap:10px;
-  padding:10px 14px;
+  justify-content:center;
+  gap:clamp(5px,1.5vw,10px);
+
+  padding:clamp(6px,1.5vw,10px) clamp(8px,2vw,14px);
+
+  width:auto;
+  max-width:calc(100vw - 16px);
+
   background:var(--paper);
   border:var(--line) solid var(--ink);
   border-radius:999px;
-  box-shadow:1px 1px 0 var(--ink);
+  box-shadow:2px 2px 0 var(--ink);
+
+  flex-wrap:nowrap;
 }
 
 .music-player button{
-  width:25px;
-  height:25px;
+  width:clamp(22px,6vw,28px);
+  height:clamp(22px,6vw,28px);
+
+  min-width:22px;
+  min-height:22px;
+
+  padding:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   border:var(--line) solid var(--ink);
   border-radius:50%;
+
   background:var(--red);
   color:var(--cream);
+
   cursor:pointer;
+  font-size:clamp(.55rem,2vw,.75rem);
   font-weight:300;
 }
 
 .music-player span{
-  font-size:.8rem;
+  font-size:clamp(.65rem,2vw,.8rem);
   font-weight:700;
   color:var(--ink);
+  white-space:nowrap;
 }
 
 .music-player input{
-  width:80px;
+  width:clamp(45px,12vw,80px);
+  max-width:80px;
+  min-width:40px;
+
+  margin:0;
+  padding:0;
+
   accent-color:var(--red);
 }
 
-@media(max-width:500px){
-  .music-player{
-    right:10px;
-    top:10px;
+  .music-player input{
+    width:clamp(40px,15vw,55px);
+    min-width:40px;
   }
 
-  .music-player span{
-    display:none;
+  .music-player button{
+    width:24px;
+    height:24px;
+    min-width:24px;
+    min-height:24px;
+  }
+
+@media(max-width:350px){
+
+  .music-player{
+    right:6px;
+    bottom:6px;
+    padding:4px 6px;
+    gap:4px;
+  }
+
+  .music-player button{
+    width:22px;
+    height:22px;
+    min-width:22px;
+    min-height:22px;
+  }
+
+  .music-player input{
+    width:38px;
+    min-width:38px;
   }
 }
-
 /* ---------- hero ---------- */
 .hero{
   text-align:center;
@@ -633,4 +684,96 @@ footer{
 
 @media (prefers-reduced-motion: reduce){
   .flame, .envelope-flap, .letter-paper, .wish-msg, .blow-btn{ transition:none !important; }
+}
+
+.music-player{
+  position:fixed;
+  right:clamp(8px,2vw,16px);
+  bottom:clamp(8px,2vw,16px);
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  gap:clamp(5px,1.5vw,10px);
+
+  width:auto;
+  max-width:calc(100vw - 16px);
+
+  padding:clamp(6px,1.5vw,10px) clamp(8px,2vw,14px);
+
+  background:var(--paper);
+  border:var(--line) solid var(--ink);
+  border-radius:999px;
+  box-shadow:3px 3px 0 var(--ink);
+}
+
+.music-player button{
+  width:clamp(24px,7vw,32px);
+  height:clamp(24px,7vw,32px);
+
+  flex-shrink:0;
+
+  border:var(--line) solid var(--ink);
+  border-radius:50%;
+  background:var(--red);
+  color:var(--cream);
+
+  cursor:pointer;
+  font-size:clamp(.6rem,2vw,.8rem);
+  font-weight:300;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+}
+
+.music-player span{
+  font-size:clamp(.65rem,2vw,.8rem);
+  font-weight:700;
+  color:var(--ink);
+  white-space:nowrap;
+}
+
+.music-player input{
+  width:clamp(45px,12vw,80px);
+  height:clamp(3px,1vw,6px);
+  flex-shrink:1;
+  accent-color:var(--red);
+}
+
+@media(max-width:500px){
+
+  .music-player{
+    right:8px;
+    bottom:8px;
+    gap:6px;
+    padding:6px 8px;
+  }
+
+  .music-player span{
+    display:none;
+  }
+
+  .music-player input{
+    width:clamp(40px,15vw,60px);
+  }
+}
+
+@media(max-width:350px){
+
+  .music-player{
+    right:6px;
+    bottom:6px;
+    padding:5px 6px;
+  }
+
+  .music-player button{
+    width:23px;
+    height:23px;
+  }
+
+  .music-player input{
+    width:40px;
+  }
 }
