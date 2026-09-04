@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>happy birthday, baby!</title>
+<link rel="icon" type="image/png" href="images/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">from<span>.xae</span></div>
+  </div>
+
+  <audio id="bgMusic" loop>
+  <source src="tracks/happybirthday.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player">
+  <button id="musicToggle">▶</button>
+  <span id="musicStatus">music</span>
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="kicker">yeo·railee·domingaflavor·warmthfuly</span>
+
+   <div class="hero-art">
+       <img class="hero-img normal" src="images/snoopycake.png" alt="Snoopy">
+       <img class="hero-img hover" src="images/snoopyblow.png" alt="Snoopy">
+   </div>
+
+    <h1>Happy Birthday,<br><em>Yeo!</em></h1>
+    <p>i hope you have a really good birthday today. you deserve all the happiness and good things coming your way. enjoy your day, baby!</p>
+  </section>
+
+  <!-- CAKE -->
+  <section class="panel">
+    <h2>blow the candles, <span>make a wish</span></h2>
+    <p class="subline">take your time, make a good wish</p>
+
+    <div class="cake-stage">
+      <svg class="cake-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+        <g id="flames">
+          <g class="flame"><ellipse cx="55" cy="30" rx="6" ry="12" fill="#E3A63B"/><rect x="53" y="38" width="4" height="10" fill="#3A2E22"/></g>
+          <g class="flame"><ellipse cx="90" cy="24" rx="6" ry="13" fill="#E3A63B"/><rect x="88" y="34" width="4" height="12" fill="#3A2E22"/></g>
+          <g class="flame"><ellipse cx="125" cy="30" rx="6" ry="12" fill="#E3A63B"/><rect x="123" y="38" width="4" height="10" fill="#3A2E22"/></g>
+          <g class="flame"><ellipse cx="160" cy="24" rx="6" ry="13" fill="#E3A63B"/><rect x="158" y="34" width="4" height="12" fill="#3A2E22"/></g>
+        </g>
+        <rect x="35" y="70" width="150" height="40" rx="10" fill="#C4432B" stroke="#3A2E22" stroke-width="4"/>
+        <rect x="20" y="112" width="180" height="42" rx="10" fill="#E3A63B" stroke="#3A2E22" stroke-width="4"/>
+        <rect x="8" y="156" width="204" height="42" rx="10" fill="#C4432B" stroke="#3A2E22" stroke-width="4"/>
+        <circle cx="70" cy="90" r="3" fill="#FAF3E4"/><circle cx="110" cy="90" r="3" fill="#FAF3E4"/><circle cx="150" cy="90" r="3" fill="#FAF3E4"/>
+        <circle cx="55" cy="133" r="3" fill="#3A2E22"/><circle cx="110" cy="133" r="3" fill="#3A2E22"/><circle cx="165" cy="133" r="3" fill="#3A2E22"/>
+        <circle cx="40" cy="177" r="3" fill="#FAF3E4"/><circle cx="110" cy="177" r="3" fill="#FAF3E4"/><circle cx="180" cy="177" r="3" fill="#FAF3E4"/>
+      </svg>
+
+      <button class="blow-btn" id="blowBtn">blow the candles </button>
+      <div class="wish-msg" id="wishMsg">hope your wish comes true! happy birthday, my baby</div>
+    </div>
+  </section>
+
+ <!-- GALLERY -->
+<section class="panel">
+
+  <h2> <span></span> </h2>
+  <p class="subline">a little section for you, baby</p>
+
+  <div class="gallery">
+
+    <div class="card" onclick="openGallery('flowers for you', flowers)">
+      <img src="images/snoopyflowers.png" alt="Snoopy with flowers">
+      <h4>flowers</h4>
+      <span class="tag">01</span>
+    </div>
+
+    <div class="card" onclick="openGallery('our photos', photos)">
+      <img src="images/snoopycam.png" alt="Snoopy with cam">
+      <h4>our photos</h4>
+      <span class="tag">02</span>
+    </div>
+
+<div class="card" onclick="openMusicGallery()">
+  <img src="images/snoopymusic.png" alt="Snoopy with music">
+  <h4>playlist</h4>
+  <span class="tag">03</span>
+</div>
+
+  </div>
+
+  <!-- PHOTO MODAL -->
+ <div class="gallery-modal" id="galleryModal">
+
+  <div class="gallery-popup">
+
+    <button class="gallery-close" onclick="closeGallery()">×</button>
+
+    <h3 id="galleryTitle"></h3>
+
+    <div class="photo-scroll" id="photoScroll"></div>
+
+    <div class="music-list" id="musicList"></div>
+
+    <p class="gallery-hint">scroll</p>
+
+  </div>
+
+</div>
+
+</section>
+
+  <!-- LETTER -->
+  <section class="panel">
+    <h2>letter<span> for you</span></h2>
+    <p class="subline">happy birthday</p>
+
+    <div class="letter-stage">
+      <div class="envelope" id="envelope">
+        <div class="envelope-body">
+          <div class="letter-paper">
+            warmthfuly,<br><br>
+           happy birthday, baby!! 
+i really hope you enjoy your day today. like you can actually enjoy it (without your coursera lol).
+<br><br>’m also glad we got closer. i didn’t think we would end up talking this much. i didn’t expect how often we’d share random stuff either. but it’s been really nice.
+i like our chats, even when they go all over the place. and even when we’re just joking around or talking about something weird.
+<br><br>thanks for the laughs. thanks for the random conversations. and thanks for all those small moments that add up. i really like talking to you.
+<br><br>i hope this year gives you more good days and more reasons to feel happy.
+have fun today, baby!! please treat yourself. happy birthday again, my cool yeo.<br><br><br><br> i’m really glad i got to know you, stranger. and i really wanna get to know you better, so i guess you’re stuck with me for a while.
+          </div>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="heart-seal">♥︎</div>
+      </div>
+      <div class="tap-hint">tap to open</div>
+    </div>
+  </section>
+
+  <footer>
+    made with love, just for warmthfuly's day
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
