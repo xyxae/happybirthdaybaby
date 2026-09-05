@@ -75,14 +75,81 @@ window.addEventListener('load', () => {
 
 
 // Envelope open
+// Letter password
+
+// Letter password
+
 const envelope = document.getElementById('envelope');
+const passwordPopup = document.getElementById('passwordPopup');
+const passwordBtn = document.getElementById('passwordBtn');
+const passwordClose = document.getElementById('passwordClose');
+const letterPassword = document.getElementById('letterPassword');
+const passwordError = document.getElementById('passwordError');
+
+const correctPassword = "domingaflavor";
 
 envelope.addEventListener('click', () => {
 
-  envelope.classList.toggle('open');
+  // If already open, close the envelope
+  if(envelope.classList.contains('open')){
+    envelope.classList.remove('open');
+    return;
+  }
 
+  // If closed, ask for password
+  passwordPopup.classList.add('show');
+
+  setTimeout(() => {
+    letterPassword.focus();
+  }, 300);
 });
 
+passwordBtn.addEventListener('click', checkPassword);
+
+letterPassword.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){
+    checkPassword();
+  }
+});
+
+function checkPassword(){
+
+  if(letterPassword.value === correctPassword){
+
+    passwordPopup.classList.remove('show');
+    passwordError.classList.remove('show');
+    letterPassword.value = '';
+
+    setTimeout(() => {
+      envelope.classList.add('open');
+    }, 300);
+
+  }else{
+
+    passwordError.classList.add('show');
+
+    letterPassword.value = '';
+    letterPassword.focus();
+
+    setTimeout(() => {
+      passwordError.classList.remove('show');
+    }, 2000);
+  }
+}
+
+passwordClose.addEventListener('click', () => {
+  passwordPopup.classList.remove('show');
+  passwordError.classList.remove('show');
+  letterPassword.value = '';
+});
+
+passwordPopup.addEventListener('click', (e) => {
+  if(e.target === passwordPopup){
+    passwordPopup.classList.remove('show');
+    passwordError.classList.remove('show');
+    letterPassword.value = '';
+  }
+});
 
 // Confetti
 function launchConfetti(){
@@ -458,4 +525,12 @@ document.addEventListener('keydown', function(e){
 
   }
 
+});
+
+
+const noticeOverlay = document.getElementById('noticeOverlay');
+const noticeBtn = document.getElementById('noticeBtn');
+
+noticeBtn.addEventListener('click', () => {
+  noticeOverlay.classList.add('hide');
 });

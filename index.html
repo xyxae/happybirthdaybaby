@@ -11,6 +11,21 @@
 </head>
 <body>
 
+  <div class="notice-overlay" id="noticeOverlay">
+  <div class="notice-popup">
+    <div class="notice-icon">⚠︎</div>
+
+    <h2>hi, baby!</h2>
+
+    <p>
+      this website contains birthday greetings,
+      make sure to play the music first before exploring the website.
+    </p>
+
+    <button id="noticeBtn">okay, i'm ready ♡</button>
+  </div>
+</div>
+
 <div class="wrap">
 
   <div class="topbar">
@@ -70,7 +85,7 @@
 <section class="panel">
 
   <h2> <span></span> </h2>
-  <p class="subline">a little section for you, baby</p>
+  <p class="subline"> little section for yeo</p>
 
   <div class="gallery">
 
@@ -127,6 +142,30 @@
     <p class="subline">happy birthday</p>
 
     <div class="letter-stage">
+      <div class="password-popup" id="passwordPopup">
+  <div class="password-box">
+    <button class="password-close" id="passwordClose">×</button>
+
+    <div class="password-icon">?</div>
+
+    <h3>private letter</h3>
+
+    <p>enter the password to open this letter <br> ( ____________ ♡ chipperalligator )</p>
+
+    <input
+      type="password"
+      id="letterPassword"
+      placeholder="enter password"
+      autocomplete="off"
+    >
+
+    <button id="passwordBtn">unlock letter</button>
+
+    <div class="password-error" id="passwordError">
+      wrong password
+    </div>
+  </div>
+</div>
       <div class="envelope" id="envelope">
         <div class="envelope-body">
           <div class="letter-paper">
