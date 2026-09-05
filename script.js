@@ -172,6 +172,14 @@ const photos = [
   "images/image2.jpg"
 ];
 
+const messages = [
+  "images/nera.jpg",
+  "images/dee.jpg",
+  "images/siah.jpg",
+  "images/cider.jpg",
+  "images/dre.jpg"
+];
+
 // Gallery elements
 const galleryModal =
   document.getElementById('galleryModal');
